@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Voice Based email system</string>
+    <array name="keywords">
+        <item>create a new message</item>
+        <item>login</item>
+        <item>logout</item>
+        <item>send</item>
+    </array>
+</resources>
