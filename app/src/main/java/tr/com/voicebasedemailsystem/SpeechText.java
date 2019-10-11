@@ -21,17 +21,20 @@ public class SpeechText implements TextToSpeech.OnInitListener {
         activity=ac;
         textToSpeech = new TextToSpeech(context,this );
     }
-    public void Listen(){
+    public void listen(int requestCode){
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         try {
-            activity.startActivityForResult(intent, 1);
+            activity.startActivityForResult(intent, requestCode);
         } catch (ActivityNotFoundException a) {
 
         }
     }
 
-    public void Speak(String input){
+    public void speak(String input){
         textToSpeech.speak(input, TextToSpeech.QUEUE_FLUSH, null);
+        while (textToSpeech.isSpeaking()){
+
+        }
     }
 
     @Override
